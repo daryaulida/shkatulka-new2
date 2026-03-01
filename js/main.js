@@ -56,6 +56,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+const reviews = document.querySelector(".reviews-slider");
+
+if (reviews && typeof Swiper !== "undefined") {
+  new Swiper(reviews, {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".reviews-arrow.next",
+      prevEl: ".reviews-arrow.prev",
+    },
+    pagination: {
+      el: ".reviews-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      481: { slidesPerView: 2 }, // строго после 480
+    },
+  });
+}
+
+const patternsSlider = document.querySelector(".patterns-drop__slider");
+
+if (patternsSlider && typeof Swiper !== "undefined") {
+  new Swiper(patternsSlider, {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    grabCursor: true,
+
+    navigation: {
+      nextEl: ".patterns-drop__arrow.next",
+      prevEl: ".patterns-drop__arrow.prev",
+    },
+
+    pagination: {
+      el: ".patterns-drop__pagination",
+      clickable: true,
+    },
+
+    breakpoints: {
+      481: { slidesPerView: 2 }, // строго как reviews
+    },
+  });
+}
+
   const burger = document.querySelector(".burger");
   const menu = document.querySelector(".mobile-menu");
   const overlay = document.querySelector(".menu-overlay");
